@@ -1,0 +1,153 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem 3rem;
+  height: 5rem;
+
+  & nav {
+    display: flex;
+    gap: 1rem;
+
+    &.fixed {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 3rem;
+      animation: slideDown 1s ease-in-out;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(1px);
+      -webkit-backdrop-filter: blur(1px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    & a {
+      font: 500 0.875rem var(--font-code);
+      color: var(--color-text);
+      text-decoration: none;
+    }
+  }
+
+  & .logo {
+    position: absolute;
+    left: 3rem;
+    font: var(--text-logo);
+    color: var(--color-text-highlighted);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30rem;
+
+  & .name {
+    font-size: 4rem;
+    color: var(--color-text);
+  }
+
+  & .slogan {
+    margin-bottom: 1rem;
+  }
+
+  & .tecnologias {
+    text-align: center;
+    color: var(--color-text-highlighted);
+    font-weight: 500;
+
+    & .title {
+      margin-bottom: 0.5rem;
+    }
+
+    & .carousel-container {
+      width: 50rem;
+      height: 3.135rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+
+      & .carousel-stacks {
+        display: flex;
+        width: max-content;
+        animation: scroll linear infinite;
+        gap: 1rem;
+
+        &:hover {
+          animation-play-state: paused;
+        }
+
+        & .stack {
+          background: #272727;
+          display: flex;
+          align-items: center;
+          height: 2.85rem;
+          padding-inline: 1.25rem;
+          border-radius: 1.25rem;
+          font-weight: 500;
+          white-space: nowrap;
+
+          &:hover {
+            transform: scale(1.1);
+            transition: transform 0.1s ease-in-out;
+          }
+        }
+      }
+    }
+
+    /* & .carousel-stacks {
+        display: flex;
+        width: calc(5rem * 18);
+        animation: scroll 10s linear infinite;
+        gap: 1rem;
+  
+        & .stack {
+          width: 5rem;
+          background: #272727;
+          padding: 0.625rem 1.25rem;
+          border-radius: 1.25rem;
+          font-weight: 500;
+          white-space: nowrap;
+        }
+      } */
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * var(--scrollWidth)));
+  }
+}
+
+.projeto {
+  background: #1f1f1f;
+  padding: 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.25rem;
+  background: #1f1f1f;
+  margin-top: 50px;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-family: "Poppins", sans-serif;
+  --font-code: "JetBrains Mono", monospace;
+  --font-roboto: "Roboto", sans-serif;
+  --font-logo: var(--font-family);
+
+  --text: 400 1rem/1.6 var(--font-family);
+  --text-code: 100 1rem/1 var(--font-code);
+  --text-logo: 700 1.5rem var(--font-logo);
+
+  --color-text: #f5f5f5;
+  --color-text-highlighted: #60a5fa;
+  --color-bg: #121212;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font: var(--text);
+}
+
+main {
+  padding-inline: 3rem;
+  max-width: 62.5rem;
+  margin: auto;
+}
+
+h2 {
+  color: var(--color-text-highlighted);
+}
+
+html {
+  scroll-behavior: smooth;
+}
