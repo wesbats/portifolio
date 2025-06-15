@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-  if ("requestIdleCallback" in window) {
-    requestIdleCallback(() => {
-      startCarousel();
-    });
-  } else {
-    setTimeout(() => {
-      startCarousel();
-    }, 100);
-  }
+  waitForPaint(startCarousel);
 
   enableNavbar();
   enableAbout();
 });
+
+function waitForPaint(callback) {
+  requestAnimationFrame(() => {
+    startCarousel(() => {
+      setTimeout(callback, 0);
+    });
+  });
+}
 
 function startCarousel() {
   const track = document.querySelector(".carousel-stacks");
