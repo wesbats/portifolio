@@ -74,3 +74,18 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-bg-itens-dark);
 }
+
+@media (max-width: 800px) {
+  main {
+    padding-inline: 1rem;
+  }
+}
+
+@media (max-width: 350px) {
+  html {
+    font-size: 70%;
+  }
+  main {
+    padding-inline: 4px;
+  }
+}

@@ -49,6 +49,9 @@ header {
   }
 
   @media (max-width: 950px) {
+    nav {
+      gap: 0.5rem;
+    }
     .logo {
       position: static;
       margin-bottom: 0.5rem;
