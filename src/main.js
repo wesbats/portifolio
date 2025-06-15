@@ -1,17 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  waitForPaint(startCarousel);
-
+  startCarousel();
   enableNavbar();
   enableAbout();
 });
-
-function waitForPaint(callback) {
-  requestAnimationFrame(() => {
-    startCarousel(() => {
-      setTimeout(callback, 0);
-    });
-  });
-}
 
 function startCarousel() {
   const track = document.querySelector(".carousel-stacks");
@@ -20,17 +11,21 @@ function startCarousel() {
   track.innerHTML += trackCopy + trackCopy;
 
   requestAnimationFrame(() => {
-    const stacks = track.querySelectorAll(".stack");
-    const gap = parseFloat(getComputedStyle(track).gap);
-    let totalWidth = 0;
-    stacks.forEach((stack) => {
-      totalWidth += stack.offsetWidth + gap;
-    });
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        const stacks = track.querySelectorAll(".stack");
+        const gap = parseFloat(getComputedStyle(track).gap);
+        let totalWidth = 0;
+        stacks.forEach((stack) => {
+          totalWidth += stack.offsetWidth + gap;
+        });
 
-    totalWidth /= 3;
-    track.style.setProperty("--scrollWidth", `${totalWidth}px`);
-    const speed = totalWidth / 30;
-    track.style.animationDuration = `${speed}s`;
+        totalWidth /= 3;
+        track.style.setProperty("--scrollWidth", `${totalWidth}px`);
+        const speed = totalWidth / 30;
+        track.style.animationDuration = `${speed}s`;
+      }, 0);
+    });
   });
 }
 
