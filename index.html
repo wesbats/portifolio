@@ -5,10 +5,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/index.css" />
-    <title>&lt;WesBats /&gt; Dev Full Stack</title>
+    <title>WesBats Dev Full Stack</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -16,25 +16,25 @@
     />
   </head>
   <body>
-    <header id="home">
+    <header id="home" role="banner">
       <h1 class="logo">&lt;WesBats /&gt;</h1>
       <nav class="">
         <a href="#home">//HOME</a>
-        <a href="#sobre">//SOBRE</a>
-        <a href="#servicos">//SERVIÇOS</a>
-        <a href="#projetos">//PROJETOS</a>
-        <a href="#tecnologias">//TECNOLOGIAS</a>
-        <a href="#curriculo">//CURRICULO</a>
-        <a href="#contato">//CONTATO</a>
+        <a href="#about">//SOBRE</a>
+        <a href="#services">//SERVIÇOS</a>
+        <a href="#projects">//TRABALHOS</a>
+        <a href="#resume">//CURRICULO</a>
+        <a href="#contact">//CONTATO</a>
       </nav>
     </header>
-    <main>
+
+    <main role="main">
       <section id="hero" class="hero">
         <h1 class="name">Weslley Batista</h1>
         <h2 class="position">Full Stack Developer.</h2>
         <p class="slogan">Transformando ideias em código.</p>
 
-        <section class="tecnologias">
+        <section class="technologies">
           <p class="title">Tecnologias</p>
           <div class="carousel-container">
             <div class="carousel-stacks" style="--qtdStacks: 18">
@@ -50,28 +50,75 @@
         </section>
       </section>
 
-      <section id="sobre">
+      <section id="about" class="about container">
         <h2>Sobre Mim</h2>
-        <p>
-          Desenvolvedor Full Stack formado em Análise e Desenvolvimento de
-          Sistemas, com experiência prática em aplicações web, desktop e
-          desenvolvimento em equipe.
+        <p class="description">
+          Sou desenvolvedor Backend e Full Stack com base em desenvolvimento de
+          sistemas web e desktop. Tenho facilidade em aprender novas
+          tecnologias, foco na organização do código, e sempre busco estruturar
+          projetos limpos, intuitivos e escaláveis aplicando princípios como
+          SOLID.
         </p>
-        <ul>
+
+        <ul class="accordion">
           <li>
-            Experiência com projetos internos no Atacadão (sistemas web em JS,
-            PHP e MariaDB)
+            <div class="title">Minhas Principais Habilidades</div>
+            <div class="drop">
+              <p>
+                JavaScript, TypeScript, C#, Node.js, PHP, Electron, HTML, CSS,
+                MariaDB, SQLite
+              </p>
+              <p>
+                Organização de código, arquitetura de projetos, desenvolvimento
+                de APIs, lógica de negócio e backend robusto.
+              </p>
+            </div>
           </li>
-          <li>Projeto AceleraDev com o Carrefour (API completa em C#)</li>
-          <li>Projetos autorais com Electron e TypeScript</li>
+
           <li>
-            Organizado, perfeccionista e focado em código limpo e escalável
+            <div class="title">Experiência Prática</div>
+            <div class="drop">
+              <ul>
+                <li>
+                  Desenvolvimento de sistemas internos no Atacadão (JS, PHP,
+                  MariaDB)
+                </li>
+                <li>Projeto AceleraDev com o Carrefour (API completa em C#)</li>
+                <li>
+                  Projetos autorais como o DevNotes (Electron + TypeScript)
+                </li>
+              </ul>
+            </div>
           </li>
-          <li>Paixão por tecnologia desde os 15 anos</li>
+
+          <li>
+            <div class="title">Perfil Profissional</div>
+            <div class="drop">
+              <p>
+                Organizado, com foco em código limpo e de fácil manutenção.
+                Tenho facilidade de aprendizado e adaptação, me sinto
+                confortável assumindo desafios técnicos mesmo fora da minha zona
+                de conforto.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div class="title">Sobre Mim</div>
+            <div class="drop">
+              <p>
+                Desde os 12 anos sou apaixonado por tecnologia. Comecei com
+                manutenção e hardware, o que despertou meu interesse em
+                desenvolvimento de sistemas. Fora do trabalho, sou fã de cultura
+                japonesa, animes e costumo gamificar minha rotina de estudos
+                para manter a disciplina e evolução constante.
+              </p>
+            </div>
+          </li>
         </ul>
       </section>
 
-      <section id="servicos">
+      <section id="services" class="container">
         <h2>O que eu faço</h2>
         <ul>
           <li>Websites institucionais e landing pages</li>
@@ -82,10 +129,10 @@
         </ul>
       </section>
 
-      <section id="projetos">
+      <section id="projects" class="container">
         <h2>Projetos em Destaque</h2>
 
-        <div class="projeto">
+        <div class="project">
           <h3>AceleraDev - ToDo List</h3>
           <p>
             API completa em C#, JWT, banco de dados, testes e desenvolvimento em
@@ -94,20 +141,24 @@
           <a
             href="https://github.com/acelera-dev-c4/todo-list-backend"
             target="_blank"
-            >Ver no GitHub</a
           >
+            Ver no GitHub
+          </a>
         </div>
 
-        <div class="projeto">
+        <div class="project">
           <h3>DevNotes (em desenvolvimento)</h3>
           <p>
             Caderno digital de anotações técnicas para desenvolvedores.
             Desenvolvido em Electron e TypeScript, arquitetura modular e
             offline.
           </p>
+          <a href="https://github.com/wesbats/devnotes" target="_blank">
+            Ver no GitHub
+          </a>
         </div>
 
-        <div class="projeto">
+        <div class="project">
           <h3>Gerenciador de Estoque (em planejamento)</h3>
           <p>
             Controle de vendas, estoque e caixa com foco em processos e
@@ -116,30 +167,51 @@
         </div>
       </section>
 
-      <section id="curriculo">
+      <section id="resume" class="container">
         <h2>Currículo</h2>
-        <a href="docs/curriculo-wesbats.pdf" download
-          >📄 Baixar meu currículo</a
-        >
+        <a href="public/docs/cv-wesbats-developer.pdf" download>
+          <img src="document.svg" alt="icone documento" class="icon" />
+          Baixar meu currículo
+        </a>
       </section>
 
-      <section id="contato">
+      <section id="contact" class="container">
         <h2>Contato</h2>
         <p>Vamos conversar sobre seu projeto ou oportunidade:</p>
         <ul>
-          <li>Email: seuemail@email.com</li>
           <li>
-            LinkedIn:
-            <a href="https://linkedin.com/in/seulinkedin" target="_blank"
-              >Perfil</a
+            <a href="mailto:weslleyvitorbatista@gmail.com">
+              Email: weslleyvitorbatista@gmail.com
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://linkedin.com/in/wesbats"
+              target="_blank"
+              rel="noopener noreferrer"
             >
+              <img src="linkedin.svg" alt="icone linkedin" class="icon" />
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/wesbats"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="github"
+            >
+              <img src="github.svg" alt="icone github" class="icon" />
+              Github
+            </a>
           </li>
         </ul>
       </section>
     </main>
-    <footer>
+
+    <footer role="contentinfo">
       <p>
-        &copy; 2025 WesBats.dev —
+        &copy; 2025 wesbats.dev —
         <span class="code">console.log('Feito com ❤️')</span>
       </p>
     </footer>
