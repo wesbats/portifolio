@@ -1,14 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      animateCarousel();
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(() => {
+      startCarousel();
     });
-  });
+  } else {
+    setTimeout(() => {
+      startCarousel();
+    }, 100);
+  }
+
   enableNavbar();
   enableAbout();
 });
 
-function animateCarousel() {
+function startCarousel() {
   const track = document.querySelector(".carousel-stacks");
   const trackCopy = track.innerHTML;
 
