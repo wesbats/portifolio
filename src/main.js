@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   requestAnimationFrame(() => {
-    animateCarousel();
+    requestAnimationFrame(() => {
+      animateCarousel();
+    });
   });
   enableNavbar();
   enableAbout();
