@@ -1,19 +1,27 @@
+@import url(./hero.css);
+
 header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1.25rem 3rem;
-  height: 5rem;
+  min-height: 5rem;
+  flex-wrap: wrap;
 
   & nav {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
+    z-index: 1;
 
     &.fixed {
       position: fixed;
       top: 0;
       width: 100%;
-      height: 3rem;
+      min-height: 3rem;
+      padding: 0.5rem;
       animation: slideDown 1s ease-in-out;
 
       display: flex;
@@ -23,7 +31,7 @@ header {
       background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(1px);
       -webkit-backdrop-filter: blur(1px);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
     }
 
     & a {
@@ -39,6 +47,13 @@ header {
     font: var(--text-logo);
     color: var(--color-text-highlighted);
   }
+
+  @media (max-width: 950px) {
+    .logo {
+      position: static;
+      margin-bottom: 0.5rem;
+    }
+  }
 }
 
 @keyframes slideDown {
@@ -50,104 +65,198 @@ header {
   }
 }
 
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 30rem;
+.container {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  color: var(--color-text);
 
-  & .name {
-    font-size: 4rem;
-    color: var(--color-text);
-  }
-
-  & .slogan {
-    margin-bottom: 1rem;
-  }
-
-  & .tecnologias {
+  & h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
     text-align: center;
     color: var(--color-text-highlighted);
-    font-weight: 500;
+  }
+
+  & ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.about {
+  padding: 2rem;
+
+  & .description {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .accordion > li {
+    margin-bottom: 1rem;
+    border-radius: 0.625rem;
+    background: var(--color-bg-itens);
+    overflow: hidden;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
 
     & .title {
-      margin-bottom: 0.5rem;
-    }
+      padding: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      position: relative;
+      background: var(--color-bg-itens-dark);
 
-    & .carousel-container {
-      width: 50rem;
-      height: 3.135rem;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-
-      & .carousel-stacks {
-        display: flex;
-        width: max-content;
-        animation: scroll linear infinite;
-        gap: 1rem;
-
-        &:hover {
-          animation-play-state: paused;
-        }
-
-        & .stack {
-          background: #272727;
-          display: flex;
-          align-items: center;
-          height: 2.85rem;
-          padding-inline: 1.25rem;
-          border-radius: 1.25rem;
-          font-weight: 500;
-          white-space: nowrap;
-
-          &:hover {
-            transform: scale(1.1);
-            transition: transform 0.1s ease-in-out;
-          }
-        }
+      &::after {
+        content: "+";
+        position: absolute;
+        right: 1rem;
+        transition: transform 0.3s ease;
       }
     }
 
-    /* & .carousel-stacks {
-        display: flex;
-        width: calc(5rem * 18);
-        animation: scroll 10s linear infinite;
-        gap: 1rem;
-  
-        & .stack {
-          width: 5rem;
-          background: #272727;
-          padding: 0.625rem 1.25rem;
-          border-radius: 1.25rem;
-          font-weight: 500;
-          white-space: nowrap;
-        }
-      } */
+    &.active .title::after {
+      transform: rotate(45deg);
+    }
+
+    & .drop {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      padding: 0 1rem;
+    }
+
+    &.active .drop {
+      padding: 1rem;
+      overflow: auto;
+      max-height: 12rem;
+    }
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-bg-itens-dark);
   }
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-1 * var(--scrollWidth)));
+#services {
+  & li {
+    background: var(--color-bg-itens);
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-1px);
+    }
   }
 }
 
-.projeto {
-  background: #1f1f1f;
-  padding: 1.25rem;
-  border-radius: 10px;
-  margin-bottom: 1.25rem;
+#projects {
+  .project {
+    background: var(--color-bg-itens);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+
+    & h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--color-text-highlighted);
+    }
+
+    & p {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    & a {
+      color: var(--color-link);
+      font-weight: 500;
+      transition: color 0.3s;
+
+      &:hover {
+        color: var(--color-link-hover);
+      }
+    }
+  }
+}
+
+#resume {
+  text-align: center;
+
+  & a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-bg-itens);
+    padding: 1rem 2rem;
+    border-radius: 0.625rem;
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background 0.3s;
+
+    &:hover {
+      transform: translateY(-3px);
+      background: var(--color-bg-itens-dark);
+    }
+  }
+}
+
+#contact {
+  text-align: center;
+
+  & p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  & ul {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    & li {
+      background: var(--color-bg-itens);
+      padding: 0.5rem 1rem;
+      border-radius: 0.625rem;
+      font-weight: 500;
+      box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, background 0.3s;
+
+      & a .icon {
+        height: 1rem;
+      }
+      &:hover {
+        transform: translateY(-2px);
+        background: var(--color-bg-itens-dark);
+      }
+    }
+  }
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
 }
 
 footer {
   text-align: center;
   padding: 1.25rem;
-  background: #1f1f1f;
+  background: var(--color-bg-itens-dark);
   margin-top: 50px;
   font-size: 0.9rem;
 }

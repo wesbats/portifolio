@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // anima carosel
+  animateCarousel();
+  enableNavbar();
+  enableAbout();
+});
+
+function animateCarousel() {
   const track = document.querySelector(".carousel-stacks");
   const trackCopy = track.innerHTML;
 
@@ -18,8 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const speed = totalWidth / 30;
     track.style.animationDuration = `${speed}s`;
   });
+}
 
-  //navbar
+function enableNavbar() {
   const nav = document.querySelector("nav");
   const hero = document.querySelector(".hero");
 
@@ -31,8 +37,25 @@ document.addEventListener("DOMContentLoaded", () => {
         nav.classList.add("fixed");
       }
     },
-    { root: null, threshold: 0.1 }
+    { root: null, threshold: 0 }
   );
 
   observer.observe(hero);
-});
+}
+
+function enableAbout() {
+  document.querySelectorAll(".accordion .title").forEach((title) => {
+    title.addEventListener("click", () => {
+      const item = title.parentElement;
+      const isActive = item.classList.contains("active");
+
+      document.querySelectorAll(".accordion li").forEach((li) => {
+        li.classList.remove("active");
+      });
+
+      if (!isActive) {
+        item.classList.add("active");
+      }
+    });
+  });
+}
