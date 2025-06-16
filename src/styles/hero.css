@@ -52,9 +52,11 @@
           font-weight: 500;
           white-space: nowrap;
 
-          &:hover {
-            transform: scale(1.1);
-            transition: transform 0.1s ease-in-out;
+          @media (hover: hover) {
+            &:hover {
+              transform: scale(1.1);
+              transition: transform 0.1s ease-in-out;
+            }
           }
         }
       }
