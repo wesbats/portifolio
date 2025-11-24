@@ -38,9 +38,7 @@
         animation: scroll linear infinite;
         gap: 1rem;
 
-        &:hover {
-          animation-play-state: paused;
-        }
+        transition: transform 0.1s ease-in-out;
 
         & .stack {
           background: var(--color-bg-itens);
@@ -52,10 +50,10 @@
           font-weight: 500;
           white-space: nowrap;
 
-          @media (hover: hover) {
+          @media (hover: hover) and (pointer: fine) {
             &:hover {
+              animation-play-state: paused;
               transform: scale(1.1);
-              transition: transform 0.1s ease-in-out;
             }
           }
         }
