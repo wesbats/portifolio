@@ -60,7 +60,7 @@ const services = [
   {
     badge: "Página única",
     title: "Landing page",
-    price: "A partir de R$ 350",
+    price: "A partir de R$ 400",
     time: "5 a 10 dias",
     description: "Para divulgar um serviço, captar contatos ou apresentar uma oferta específica com clareza.",
     items: ["Estrutura da oferta", "Design responsivo", "Preparação para Google", "Publicação inclusa"],
@@ -68,7 +68,7 @@ const services = [
   {
     badge: "Presença completa",
     title: "Site institucional",
-    price: "A partir de R$ 800",
+    price: "A partir de R$ 700",
     time: "7 a 15 dias",
     description:
       "Para empresas que precisam explicar serviços, transmitir profissionalismo e centralizar canais de atendimento.",
@@ -118,16 +118,21 @@ const techStack = [
 
 const projects = [
   {
-    title: "Portal centralizador de processos",
-    challenge: "Informações e links importantes ficavam espalhados, aumentando perda de tempo na rotina.",
-    result: "Um portal interno para centralizar acessos e deixar o fluxo de trabalho mais rápido.",
-    link: "https://github.com/wesbats/portal-backend",
+    title: "Simulify",
+    challenge:
+      "Estudantes enfrentam dificuldades para encontrar materiais de qualidade, simular condições reais de prova e identificar lacunas específicas no aprendizado.",
+    result:
+      "Uma plataforma SaaS que utiliza IA para gerar simulados personalizados, cronômetros de pressão real e métricas de evolução, otimizando o fluxo de estudos.",
+    link: "https://simulify.wesbats.dev/",
+    linkType: "Site",
+    img: "simulify.webp",
   },
   {
-    title: "Gestor de demandas internas",
+    title: "Gestor de demandas internas (Carrefour)",
     challenge: "Acompanhamento de tarefas sem visibilidade clara de responsáveis e andamento.",
     result: "Base de gestão com autenticação e organização de demandas para reduzir confusão operacional.",
     link: "https://github.com/acelera-dev-c4/todo-list-backend",
+    linkType: "GitHub",
   },
 ];
 
@@ -154,7 +159,7 @@ const faqs = [
   {
     question: "Quanto custa para criar um site?",
     answer:
-      "Depende do tamanho e objetivo do projeto. Landing pages começam a partir de R$ 350 e sites institucionais a partir de R$ 800. Depois da conversa inicial, envio uma proposta com escopo, prazo e valor fechados.",
+      "Depende do tamanho e objetivo do projeto. Landing pages começam a partir de R$ 400 e sites institucionais a partir de R$ 700. Depois da conversa inicial, envio uma proposta com escopo, prazo e valor fechados.",
   },
   {
     question: "Você cuida de domínio e hospedagem?",
@@ -579,24 +584,28 @@ function Projects() {
                       <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
                       <span className="ml-3 h-5 flex-1 rounded-md border border-border bg-secondary" />
                     </div>
-                    <div className="grid min-h-56 place-items-center bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.18),transparent_30%),linear-gradient(135deg,hsl(var(--secondary)),hsl(var(--background)))] p-6">
-                      <div className="w-full max-w-sm rounded-xl border border-border bg-card/80 p-4 backdrop-blur">
-                        <div className="mb-4 h-3 w-28 rounded-full bg-primary/40" />
-                        <div className="space-y-2">
-                          <div className="h-3 rounded-full bg-foreground/14" />
-                          <div className="h-3 w-4/5 rounded-full bg-foreground/10" />
-                          <div className="h-3 w-2/3 rounded-full bg-foreground/10" />
+                    {project.img ? (
+                      <img alt={project.title} className="w-full h-auto object-contain" src={project.img} />
+                    ) : (
+                      <div className="grid min-h-56 place-items-center bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.18),transparent_30%),linear-gradient(135deg,hsl(var(--secondary)),hsl(var(--background)))] p-6">
+                        <div className="w-full max-w-sm rounded-xl border border-border bg-card/80 p-4 backdrop-blur">
+                          <div className="mb-4 h-3 w-28 rounded-full bg-primary/40" />
+                          <div className="space-y-2">
+                            <div className="h-3 rounded-full bg-foreground/14" />
+                            <div className="h-3 w-4/5 rounded-full bg-foreground/10" />
+                            <div className="h-3 w-2/3 rounded-full bg-foreground/10" />
+                          </div>
+                          <div className="mt-5 grid grid-cols-3 gap-2">
+                            <div className="h-14 rounded-lg border border-border bg-secondary/70" />
+                            <div className="h-14 rounded-lg border border-border bg-secondary/70" />
+                            <div className="h-14 rounded-lg border border-border bg-secondary/70" />
+                          </div>
+                          <p className="mt-5 text-center font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                            {project.title}
+                          </p>
                         </div>
-                        <div className="mt-5 grid grid-cols-3 gap-2">
-                          <div className="h-14 rounded-lg border border-border bg-secondary/70" />
-                          <div className="h-14 rounded-lg border border-border bg-secondary/70" />
-                          <div className="h-14 rounded-lg border border-border bg-secondary/70" />
-                        </div>
-                        <p className="mt-5 text-center font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
-                          Espaço para print real
-                        </p>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
                 <CardHeader>
@@ -610,8 +619,9 @@ function Projects() {
                   <a
                     className="mt-6 inline-flex items-center gap-1 font-semibold text-foreground underline decoration-primary underline-offset-4 transition-colors hover:text-primary"
                     href={project.link}
+                    target="_blank"
                   >
-                    Ver no GitHub <ArrowUpRight className="h-4 w-4" />
+                    Acessar {project.linkType} <ArrowUpRight className="h-4 w-4" />
                   </a>
                 </CardContent>
               </Card>
