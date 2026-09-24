@@ -60,7 +60,7 @@ const services = [
   {
     badge: "Página única",
     title: "Landing page",
-    price: "A partir de R$ 400",
+    price: "A partir de R$ 600",
     time: "5 a 10 dias",
     description: "Para divulgar um serviço, captar contatos ou apresentar uma oferta específica com clareza.",
     items: ["Estrutura da oferta", "Design responsivo", "Preparação para Google", "Publicação inclusa"],
@@ -68,7 +68,7 @@ const services = [
   {
     badge: "Presença completa",
     title: "Site institucional",
-    price: "A partir de R$ 700",
+    price: "A partir de R$ 1.000",
     time: "7 a 15 dias",
     description:
       "Para empresas que precisam explicar serviços, transmitir profissionalismo e centralizar canais de atendimento.",
@@ -78,7 +78,7 @@ const services = [
   {
     badge: "Cuidado contínuo",
     title: "Hospedagem gerenciada",
-    price: "A partir de R$ 100/mês",
+    price: "A partir de R$ 80/mês",
     time: "Mensal",
     description: "Para manter seu site no ar e atualizado sem você precisar lidar com configurações técnicas.",
     items: ["SSL e domínio configurados", "Monitoramento básico", "Pequenos ajustes", "Suporte prioritário"],
